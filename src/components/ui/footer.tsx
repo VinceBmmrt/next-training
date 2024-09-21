@@ -1,7 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 import Image from "next/image";
 import Link from "next/link";
+import PaypalIcon from "../icons/paypal-icon";
+import YoutubeIcon from "../icons/youtube-icon";
+
+const paymentIcons = [
+  PaypalIcon,
+  PaypalIcon,
+  PaypalIcon,
+  PaypalIcon,
+  PaypalIcon,
+];
+const socialIcons = [
+  { component: YoutubeIcon, url: "https://paypal.com" },
+  { component: YoutubeIcon, url: "https://paypal.com" },
+  { component: YoutubeIcon, url: "https://paypal.com" },
+  { component: YoutubeIcon, url: "https://paypal.com" },
+  { component: YoutubeIcon, url: "https://paypal.com" },
+  // Add other social icons here as needed
+];
 
 export default function Footer() {
   return (
@@ -16,14 +35,8 @@ export default function Footer() {
             className="mb-6"
           />
           <div className="flex justify-center space-x-6">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Image
-                key={i}
-                src={`/partner-logo-${i}.svg`}
-                alt={`Partner ${i}`}
-                width={50}
-                height={50}
-              />
+            {paymentIcons.map((Icon, index) => (
+              <Icon key={String(index)} />
             ))}
           </div>
         </div>
@@ -31,10 +44,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            <p>123 Main Street</p>
-            <p>Anytown, ST 12345</p>
-            <p>Phone: (123) 456-7890</p>
-            <p>Email: info@company.com</p>
+            <p>+ 44 345 678 903</p>
+            <p>yourname@gmail.com</p>
+            <p>Find a store</p>
+            <div className="flex space-x-4 mt-4">
+              {socialIcons.map(({ component: Icon, url }, index) => (
+                <a
+                  key={index}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
