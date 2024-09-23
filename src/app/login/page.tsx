@@ -28,9 +28,9 @@ export default function SignupPage() {
   return (
     <div className="flex min-h-screen bg-white space-x-10">
       {/* Left side - Signup Form */}
-      <div className="mx-10 flex flex-col items-center justify-center md:ml-80">
+      <div className="mx-10 flex flex-col items-center justify-center md:ml-60">
         <div className=" max-w-sm lg:w-96">
-          <h2 className="mt-6 text-3xl font-extrabold text-blue-600 text-center">
+          <h2 className="mt-6 text-3xl font-extrabold text-center text-lightblue">
             S&apos;INSCRIRE
           </h2>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -38,7 +38,7 @@ export default function SignupPage() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-lightblue"
               >
                 E-mail
               </label>
@@ -61,7 +61,7 @@ export default function SignupPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-lightblue"
               >
                 Mot de passe
               </label>
@@ -95,7 +95,7 @@ export default function SignupPage() {
             <div>
               <label
                 htmlFor="confirmPassword"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-lightblue"
               >
                 Confirmer le mot de passe
               </label>
@@ -137,7 +137,7 @@ export default function SignupPage() {
                 />
                 <label
                   htmlFor="remember-me"
-                  className="ml-2 block text-sm text-gray-900"
+                  className="ml-2 block text-sm text-lightblue"
                 >
                   Rester connecté
                 </label>
@@ -146,7 +146,7 @@ export default function SignupPage() {
               <div className="text-sm">
                 <Link
                   href="/forgot-password"
-                  className="font-medium text-blue-600 hover:text-blue-500"
+                  className="font-medium text-lightblue hover:text-blue-500"
                 >
                   Mot de passe oublié ?
                 </Link>
@@ -157,14 +157,14 @@ export default function SignupPage() {
             <div>
               <Button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-lightblue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 VALIDER
               </Button>
             </div>
           </form>
 
-          <p className="mt-4 text-center text-sm text-gray-600">
+          <p className="mt-4 text-center text-sm text-lightblue">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
             nonumy eirmod.
           </p>
