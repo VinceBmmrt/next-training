@@ -23,7 +23,7 @@ const socialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-112959 text-white py-6 max-w-3/5 ">
+    <footer className="bg-primary-112959 text-white py-6 w-[90%] mx-auto ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-8">
           {/* <Image
