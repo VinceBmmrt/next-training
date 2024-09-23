@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-import Image from "next/image";
 import Link from "next/link";
 import PaypalIcon from "../icons/paypal-icon";
 import YoutubeIcon from "../icons/youtube-icon";
@@ -27,16 +26,16 @@ export default function Footer() {
     <footer className="bg-primary-112959 text-white py-6 max-w-3/5 ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-8">
-          <Image
-            src="/logo-large.svg"
+          {/* <Image
+            src="/"
             alt="Company Logo"
             width={200}
             height={100}
             className="mb-6"
-          />
+          /> */}
           <div className="flex justify-center space-x-6">
             {paymentIcons.map((Icon, index) => (
-              <Icon key={String(index)} />
+              <Icon key={index} className="text-white w-16 h-16" />
             ))}
           </div>
         </div>
@@ -54,6 +53,7 @@ export default function Footer() {
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-white w-8 h-8"
                 >
                   <Icon />
                 </a>
@@ -65,8 +65,13 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Customer Service</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/faq" className="hover:underline">
-                  FAQ
+                <Link href="/contact" className="hover:underline">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/payments" className="hover:underline">
+                  Ordering & Payments
                 </Link>
               </li>
               <li>
@@ -80,8 +85,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/order-tracking" className="hover:underline">
-                  Order Tracking
+                <Link href="/FAQ" className="hover:underline">
+                  FAQ
                 </Link>
               </li>
             </ul>
@@ -92,12 +97,12 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link href="/about" className="hover:underline">
-                  About Us
+                  About Adobe XD Kit
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:underline">
-                  Careers
+                <Link href="/workwithus" className="hover:underline">
+                  Work With Us
                 </Link>
               </li>
               <li>
@@ -107,26 +112,38 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/terms" className="hover:underline">
-                  Terms of Service
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/press" className="hover:underline">
+                  Press Enquiries
+                </Link>
+              </li>
+              <li>
+                <Link href="/artuppers" className="hover:underline">
+                  © Artuppers 2002
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-bold text-lg mb-4">Subscribe</h3>
+            <h3 className="font-bold text-lg mb-4">
+              Subscribe to Artuppers via email
+            </h3>
             <p className="mb-4">
               Stay updated with our latest news and offers.
             </p>
-            <form className="space-y-2">
+            <form className="space-x-2 flex">
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-blue-700 border-blue-500 placeholder-blue-300 text-white"
+                className="bg-white border-blue-500 placeholder-blue-300 text-white"
               />
               <Button
                 type="submit"
-                className="w-full bg-white text-blue-600 hover:bg-blue-100"
+                className="w-full border-2 border-blue-300 text-blue-300 hover:bg-blue-100 bg-primary-112959"
               >
                 Subscribe
               </Button>

@@ -1,4 +1,8 @@
-export default function PaypalIcon(): JSX.Element {
+type IconProps = {
+  className?: string;
+};
+
+export default function PaypalIcon({ className }: IconProps): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +11,7 @@ export default function PaypalIcon(): JSX.Element {
       width="100"
       height="100"
       viewBox="0,0,256,256"
+      className={className}
     >
       <g
         fill="#112959"

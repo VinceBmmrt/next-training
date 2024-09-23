@@ -1,4 +1,8 @@
-export default function YoutubeIcon(): JSX.Element {
+type IconProps = {
+  className?: string;
+};
+
+export default function YoutubeIcon({ className }: IconProps): JSX.Element {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +11,7 @@ export default function YoutubeIcon(): JSX.Element {
       width="40"
       height="40"
       viewBox="0,0,256,256"
+      className={className}
     >
       <g
         fill="#112959"
