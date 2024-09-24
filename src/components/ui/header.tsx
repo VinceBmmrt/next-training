@@ -44,7 +44,7 @@ const Header: React.FC = () => {
       </div>
 
       <nav className="flex justify-between mt-4 ml-40">
-        <a href="#" className="text-white">
+        <a href="/" className="text-white">
           Accueil
         </a>
         <a href="#" className="text-white">

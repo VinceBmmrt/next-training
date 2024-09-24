@@ -8,11 +8,11 @@
     >
       <g
         fill="#112959"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         stroke="none"
-        stroke-width="1"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
         stroke-miterlimit="10"
         stroke-dasharray=""
         stroke-dashoffset="0"
@@ -25,11 +25,11 @@
       </g>
       <g
         fill="#ffffff"
-        fill-rule="nonzero"
+        fillRule="nonzero"
         stroke="none"
-        stroke-width="1"
-        stroke-linecap="butt"
-        stroke-linejoin="miter"
+        strokeWidth="1"
+        strokeLinecap="butt"
+        strokeLinejoin="miter"
         stroke-miterlimit="10"
         stroke-dasharray=""
         stroke-dashoffset="0"

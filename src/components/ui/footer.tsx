@@ -139,7 +139,7 @@ export default function Footer() {
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-white border-blue-500 placeholder-blue-300 text-white"
+                className="bg-white border-blue-500 placeholder-blue-300 text-black"
               />
               <Button
                 type="submit"
