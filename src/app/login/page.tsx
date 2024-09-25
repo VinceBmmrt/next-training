@@ -34,7 +34,14 @@ export default function LoginPage() {
       },
     });
   };
-
+  async function loginWithTwitter() {
+    supabase.auth.signInWithOAuth({
+      provider: "twitter",
+      options: {
+        redirectTo: `http://localhost:3000/auth/callback`,
+      },
+    });
+  }
   return (
     <div className="flex min-h-screen bg-white space-x-10">
       {/* Left side - Signup Form */}
@@ -153,6 +160,22 @@ export default function LoginPage() {
               height={30}
             />
             Continue with Google
+          </Link>
+
+          <Link
+            className="px-7 py-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
+            style={{ backgroundColor: "#3b5998" }}
+            onClick={loginWithTwitter}
+            role="button"
+            href={""}
+          >
+            <Image
+              src={"/icons/twitter.png"}
+              alt={"twitter button"}
+              width={30}
+              height={30}
+            />
+            Continue with Twitter
           </Link>
 
           <p className="mt-4 text-center text-sm text-lightblue">
