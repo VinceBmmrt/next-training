@@ -3,7 +3,9 @@ import ImagePlaceholderIcon from "@/components/icons/image-placeholder";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import useSupabaseClient from "@/lib/supabase/client";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -12,6 +14,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const supabase = useSupabaseClient();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,6 +22,16 @@ export default function LoginPage() {
       email,
       password,
       rememberMe,
+    });
+  };
+
+  const loginWithGoogle = async () => {
+    supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `http://localhost:3000/auth/callback`,
+        skipBrowserRedirect: false,
+      },
     });
   };
 
@@ -126,6 +139,21 @@ export default function LoginPage() {
               </Button>
             </div>
           </form>
+          <Link
+            className="px-7 py-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
+            style={{ backgroundColor: "#3b5998" }}
+            onClick={loginWithGoogle}
+            role="button"
+            href={""}
+          >
+            <Image
+              src={"/icons/google.svg"}
+              alt={"google button"}
+              width={30}
+              height={30}
+            />
+            Continue with Google
+          </Link>
 
           <p className="mt-4 text-center text-sm text-lightblue">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
