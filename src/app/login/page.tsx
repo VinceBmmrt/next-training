@@ -1,5 +1,4 @@
 "use client";
-import ImagePlaceholderIcon from "@/components/icons/image-placeholder";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -8,6 +7,7 @@ import { EyeIcon, EyeOffIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ImagePlaceholderIcon from "../../../public/icons/image-placeholder";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -50,7 +50,7 @@ export default function LoginPage() {
           <h2 className="mt-6 text-3xl font-extrabold font-arial text-center text-lightblue">
             SE CONNECTER
           </h2>
-          <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <form className="mt-8 space-y-6 py-2" onSubmit={handleSubmit}>
             {/* Email Input */}
             <div>
               <label
@@ -163,8 +163,7 @@ export default function LoginPage() {
           </Link>
 
           <Link
-            className="px-7 py-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
-            style={{ backgroundColor: "#3b5998" }}
+            className="px-7 py-2 bg-bluetwitter text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-full flex justify-center items-center mb-3"
             onClick={loginWithTwitter}
             role="button"
             href={""}

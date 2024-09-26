@@ -1,41 +1,47 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import Image from "next/image";
 import Link from "next/link";
-import PaypalIcon from "../icons/paypal-icon";
-import YoutubeIcon from "../icons/youtube-icon";
 
 const paymentIcons = [
-  PaypalIcon,
-  PaypalIcon,
-  PaypalIcon,
-  PaypalIcon,
-  PaypalIcon,
+  "antivirus-white",
+  "law-white",
+  "payment-visa",
+  "simple-paypal",
+  "metro-bitcoin",
+  "simple-ethereum",
 ];
-const socialIcons = [
-  { component: YoutubeIcon, url: "https://paypal.com" },
-  { component: YoutubeIcon, url: "https://paypal.com" },
-  { component: YoutubeIcon, url: "https://paypal.com" },
-  { component: YoutubeIcon, url: "https://paypal.com" },
-  { component: YoutubeIcon, url: "https://paypal.com" },
-  // Add other social icons here as needed
-];
+// const socialIcons = [
+//   { component: YoutubeIcon, url: "https://paypal.com" },
+//   { component: YoutubeIcon, url: "https://paypal.com" },
+//   { component: YoutubeIcon, url: "https://paypal.com" },
+//   { component: YoutubeIcon, url: "https://paypal.com" },
+//   { component: YoutubeIcon, url: "https://paypal.com" },
+//   // Add other social icons here as needed
+// ];
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-112959 text-white py-6 w-[90%] mx-auto ">
+    <footer className="bg-primary-112959 text-white py-6 w-4/5 mx-auto ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-8">
-          {/* <Image
-            src="/"
-            alt="Company Logo"
-            width={200}
+          <Image
+            src="../icons/logo_artcore-white.svg"
+            alt="Logo"
+            width={100}
             height={100}
             className="mb-6"
-          /> */}
+          />
           <div className="flex justify-center space-x-6">
-            {paymentIcons.map((Icon, index) => (
-              <Icon key={index} className="text-white w-16 h-16" />
+            {paymentIcons.map((icon, index) => (
+              <Image
+                key={index}
+                className="text-white"
+                src={`/icons/${icon}.svg`}
+                alt={icon}
+                width={40}
+                height={40}
+              />
             ))}
           </div>
         </div>
@@ -46,7 +52,7 @@ export default function Footer() {
             <p>+ 44 345 678 903</p>
             <p>yourname@gmail.com</p>
             <p>Find a store</p>
-            <div className="flex space-x-4 mt-4">
+            {/* <div className="flex space-x-4 mt-4">
               {socialIcons.map(({ component: Icon, url }, index) => (
                 <a
                   key={index}
@@ -58,7 +64,7 @@ export default function Footer() {
                   <Icon />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div>

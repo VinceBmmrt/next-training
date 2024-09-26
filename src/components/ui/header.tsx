@@ -17,16 +17,16 @@ const Header: React.FC = async () => {
   };
 
   return (
-    <header className="bg-primary-112959 p-4 w-[90%] mx-auto">
+    <header className="bg-primary-112959 p-4 w-4/5 mx-auto">
       <div className="flex justify-between items-center">
         <div className="text-white text-lg font-bold">Your Logo</div>
       </div>
 
-      <div className="flex justify-between ml-40 mt-4 items-baseline text-white">
+      <div className="flex flex-wrap justify-between mt-4 items-baseline text-white space-x-4">
         <input
           type="text"
           placeholder="Search..."
-          className="border rounded p-2"
+          className="border rounded p-2 flex-grow md:flex-grow-0"
         />
         <a href="/" className="flex items-center">
           <GiEarthAmerica className="mr-1" />
@@ -54,7 +54,7 @@ const Header: React.FC = async () => {
         </a>
       </div>
 
-      <nav className="flex justify-between mt-4 ml-40">
+      <nav className="flex flex-wrap justify-between mt-4 space-x-4 text-white">
         <a href="/" className="text-white">
           Accueil
         </a>
@@ -70,29 +70,28 @@ const Header: React.FC = async () => {
         <a href="#" className="text-white">
           Notre Actu
         </a>
+        <ul className="flex items-center space-x-4 text-white">
+          {!data.session && (
+            <>
+              <li>
+                <Link href="/signup" className="">
+                  Inscription
+                </Link>
+              </li>
+              <li>
+                <Link href="/login" className="">
+                  Se connecter
+                </Link>
+              </li>
+            </>
+          )}
+          {data.session && (
+            <form action={logoutAction} className="flex">
+              <button className="ml-4">Se déconnecter</button>
+            </form>
+          )}
+        </ul>
       </nav>
-
-      <ul className="flex items-center space-x-4 text-white">
-        {!data.session && (
-          <>
-            <li>
-              <Link href="/signup" className="">
-                Register
-              </Link>
-            </li>
-            <li>
-              <Link href="/login" className="">
-                Login
-              </Link>
-            </li>
-          </>
-        )}
-        {data.session && (
-          <form action={logoutAction} className="flex">
-            <button className="ml-4">Logout</button>
-          </form>
-        )}
-      </ul>
     </header>
   );
 };

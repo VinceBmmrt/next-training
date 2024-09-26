@@ -1,11 +1,11 @@
 "use client";
-import ImagePlaceholderIcon from "@/components/icons/image-placeholder";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import ImagePlaceholderIcon from "../../../public/icons/image-placeholder";
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");

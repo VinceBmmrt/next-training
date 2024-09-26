@@ -13,6 +13,7 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         lightblue: "#2799FA",
+        bluetwitter: "#50A8F4",
 
         card: {
           DEFAULT: "hsl(var(--card))",
