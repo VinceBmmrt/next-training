@@ -11,18 +11,19 @@ const paymentIcons = [
   "metro-bitcoin",
   "simple-ethereum",
 ];
-// const socialIcons = [
-//   { component: YoutubeIcon, url: "https://paypal.com" },
-//   { component: YoutubeIcon, url: "https://paypal.com" },
-//   { component: YoutubeIcon, url: "https://paypal.com" },
-//   { component: YoutubeIcon, url: "https://paypal.com" },
-//   { component: YoutubeIcon, url: "https://paypal.com" },
-//   // Add other social icons here as needed
-// ];
+
+const socialIcons = [
+  "material-mail",
+  "metro-instagram",
+  "metro-linkedin",
+  "metro-twitter",
+  "metro-youtube-play",
+  "awesome-behance-square",
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-112959 text-white py-6 w-4/5 mx-auto ">
+    <footer className="bg-primary-112959 text-white py-2 w-4/5 mx-auto ">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-8">
           <Image
@@ -52,19 +53,18 @@ export default function Footer() {
             <p>+ 44 345 678 903</p>
             <p>yourname@gmail.com</p>
             <p>Find a store</p>
-            {/* <div className="flex space-x-4 mt-4">
-              {socialIcons.map(({ component: Icon, url }, index) => (
-                <a
+            <div className="flex space-x-4 mt-4">
+              {socialIcons.map((icon, index) => (
+                <Image
                   key={index}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white w-8 h-8"
-                >
-                  <Icon />
-                </a>
+                  className="text-white"
+                  src={`/icons/${icon}.svg`}
+                  alt={icon}
+                  width={24}
+                  height={24}
+                />
               ))}
-            </div> */}
+            </div>
           </div>
 
           <div>
@@ -156,12 +156,11 @@ export default function Footer() {
             </form>
           </div>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-blue-500 text-center">
-          <p>
-            &copy; {new Date().getFullYear()} Company Name. All rights reserved.
-          </p>
-        </div>
+      </div>
+      <div className="mt-2 pt-2 border-t border-blue-500 text-center">
+        <p>
+          &copy; {new Date().getFullYear()} Company Name. All rights reserved.
+        </p>
       </div>
     </footer>
   );

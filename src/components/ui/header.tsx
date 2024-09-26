@@ -26,7 +26,7 @@ const Header: React.FC = async () => {
         <input
           type="text"
           placeholder="Search..."
-          className="border rounded p-2 flex-grow md:flex-grow-0"
+          className=" text-black border rounded p-2 flex-grow md:flex-grow-0"
         />
         <a href="/" className="flex items-center">
           <GiEarthAmerica className="mr-1" />
