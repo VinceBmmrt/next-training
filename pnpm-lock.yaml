@@ -17,9 +17,15 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.8)(react@18.3.1)
+      '@supabase/auth-helpers-react':
+        specifier: ^0.5.0
+        version: 0.5.0(@supabase/supabase-js@2.45.4)
       '@supabase/ssr':
         specifier: ^0.0.10
         version: 0.0.10(@supabase/supabase-js@2.45.4)
+      '@supabase/supabase-js':
+        specifier: ^2.45.4
+        version: 2.45.4
       '@svgr/webpack':
         specifier: ^8.1.0
         version: 8.1.0(typescript@5.6.2)
@@ -994,6 +1000,11 @@ packages:
 
   '@rushstack/eslint-patch@1.10.4':
     resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
+
+  '@supabase/auth-helpers-react@0.5.0':
+    resolution: {integrity: sha512-5QSaV2CGuhDhd7RlQCoviVEAYsP7XnrFMReOcBazDvVmqSIyjKcDwhLhWvnrxMOq5qjOaA44MHo7wXqDiF0puQ==}
+    peerDependencies:
+      '@supabase/supabase-js': ^2.39.8
 
   '@supabase/auth-js@2.65.0':
     resolution: {integrity: sha512-+wboHfZufAE2Y612OsKeVP4rVOeGZzzMLD/Ac3HrTQkkY4qXNjI6Af9gtmxwccE5nFvTiF114FEbIQ1hRq5uUw==}
@@ -4056,6 +4067,10 @@ snapshots:
   '@rtsao/scc@1.1.0': {}
 
   '@rushstack/eslint-patch@1.10.4': {}
+
+  '@supabase/auth-helpers-react@0.5.0(@supabase/supabase-js@2.45.4)':
+    dependencies:
+      '@supabase/supabase-js': 2.45.4
 
   '@supabase/auth-js@2.65.0':
     dependencies:

@@ -1,6 +1,7 @@
 "use server";
 
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
+import { RequestCookie } from "next/dist/compiled/@edge-runtime/cookies";
 import { cookies } from "next/headers";
 
 export default async function createSupabaseServerClient() {
@@ -19,6 +20,9 @@ export default async function createSupabaseServerClient() {
         },
         remove(name: string, options: CookieOptions) {
           cookieStore.set({ name, value: "", ...options });
+        },
+        getAll: function (): RequestCookie[] {
+          throw new Error("Function not implemented.");
         },
       },
     }

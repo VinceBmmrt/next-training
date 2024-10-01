@@ -6,6 +6,7 @@ import { EyeIcon, EyeOffIcon } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ImagePlaceholderIcon from "../../../public/icons/image-placeholder";
+import { signUpNewUser } from "../_actions";
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");
@@ -15,14 +16,22 @@ export default function SignupPage() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     console.log("Form submitted", {
       email,
       password,
       confirmPassword,
       rememberMe,
     });
+
+    try {
+      await signUpNewUser(email, password);
+    } catch (error) {
+      console.error("Error during sign up:", error);
+      alert("An error occurred during sign up. Please try again.");
+    }
   };
 
   return (

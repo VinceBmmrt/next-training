@@ -8,6 +8,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import ImagePlaceholderIcon from "../../../public/icons/image-placeholder";
+import { signInWithEmail } from "../_actions";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -16,13 +17,15 @@ export default function LoginPage() {
   const [rememberMe, setRememberMe] = useState(false);
   const supabase = useSupabaseClient();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted", {
-      email,
-      password,
-      rememberMe,
-    });
+
+    try {
+      await signInWithEmail(email, password);
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("An error occurred during login. Please try again.");
+    }
   };
 
   const loginWithGoogle = async () => {
@@ -44,7 +47,6 @@ export default function LoginPage() {
   }
   return (
     <div className="flex min-h-screen bg-white space-x-10">
-      {/* Left side - Signup Form */}
       <div className="mx-10 flex flex-col items-center justify-center md:ml-60">
         <div className=" max-w-sm lg:w-96">
           <h2 className="mt-6 text-3xl font-extrabold font-arial text-center text-lightblue">

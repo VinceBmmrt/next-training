@@ -1,31 +1,44 @@
 "use server";
 
 import createSupabaseServerClient from "@/lib/supabase/server";
-import { CreateUserInput, LoginUserInput } from "@/lib/user-schema";
+import { redirect } from "next/navigation";
 
-export async function signUpWithEmailAndPassword({
-  data,
-  emailRedirectTo,
-}: {
-  data: CreateUserInput;
-  emailRedirectTo?: string;
-}) {
-  const supabase = await createSupabaseServerClient();
-  const result = await supabase.auth.signUp({
-    email: data.email,
-    password: data.password,
-    options: {
-      emailRedirectTo,
-    },
+export async function signInWithEmail(email: string, password: string) {
+  const supabase = await createSupabaseServerClient(); // Provide the cookie management functions
+
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
   });
-  return JSON.stringify(result);
+
+  if (error) {
+    console.error("Error during sign in:", error.message);
+    redirect("/error");
+    return;
+  }
+
+  console.log("Sign in successful:", data);
+
+  redirect("http://localhost:3000");
 }
 
-export async function signInWithEmailAndPassword(data: LoginUserInput) {
-  const supabase = await createSupabaseServerClient();
-  const result = await supabase.auth.signInWithPassword({
-    email: data.email,
-    password: data.password,
+export async function signUpNewUser(email: string, password: string) {
+  const supabase = await createSupabaseServerClient(); // Provide the cookie management functions
+
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      emailRedirectTo: "http://localhost:3000/auth/confirm",
+    },
   });
-  return JSON.stringify(result);
+
+  if (error) {
+    console.error("Error during sign up:", error.message);
+    redirect("/");
+  }
+
+  console.log("Sign up successful:", data);
+
+  redirect("/login");
 }
